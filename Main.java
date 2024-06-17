@@ -65,6 +65,8 @@ public static void main(String[] args) {
       System.out.println("");
     } else {
       System.out.println("Não é possível calcular a raiz quadrada de um número negativo.");
+      System.out.println("");
+      raizQuadrada();
     }
   }
 
