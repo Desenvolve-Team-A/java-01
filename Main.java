@@ -51,15 +51,15 @@ public static void main(String[] args) {
 
   // Função Fatorial
   public static void fatorial(){
-    int input;
+    long input;
 
-    System.out.print("Digite um número para calcular seu fatorial: ");
-    input = readIntPositive();
+    System.out.print("Digite um número entre 0 a 20 para calcular seu fatorial: ");
+    input = readLongPositive();
 
     System.out.println("O fatorial do número " + input + " é " + fatorialCalculo(input));
   }
 
-  public static int fatorialCalculo(int number){
+  public static long fatorialCalculo(long number){
     if(number == 0 || number == 1){
       return 1;
     }
@@ -67,21 +67,21 @@ public static void main(String[] args) {
     return number * (fatorialCalculo(number - 1));
   }
 
-  public static int readIntPositive(){
+  public static long readLongPositive(){
     boolean invalidNumber;
-    int number = 0;
+    long number = 0;
 
     do {
       try {
-        number = Integer.parseInt(scanner.next());
+        number = Long.parseLong(scanner.next());
 
-        if(number < 0) {
+        if(number < 0 || number > 20) {
           throw new IllegalArgumentException();
         }
 
         invalidNumber = false;
       } catch (Exception e) {
-        System.out.println("Valor digitado não é um número inteiro e positivo. Digite um valor inteiro.");
+        System.out.println("Valor digitado não é um número inteiro e positivo ou é maior que 20. Digite outro valor.");
         invalidNumber = true;
       }
     } while(invalidNumber);
