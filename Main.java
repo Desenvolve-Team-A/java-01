@@ -52,7 +52,7 @@ public static void main(String[] args) {
 
     System.out.print("Digite um número para calcular a raiz quadrada: ");
 
-    while (!write.hasNextInt()) {
+    while (!write.hasNextDouble()) {
       System.out.print("Entrada inválida. Por favor, digite um número: ");
       write.next();
     }
